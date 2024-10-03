@@ -58,6 +58,13 @@
             bindings = <&kp SQT &kp SQT &kp LEFT>;
             label = "MM7";
         };
+
+        mm8: mm8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END)>;
+            label = "MM8";
+        };
     };
 
     keymap {
@@ -109,7 +116,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp NUMBER_1  &kp K_SLEEP
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mm3    &mm4    &mm5    &mm6          &mm7
+&trans  &trans  &trans  &trans  &trans  &trans                  &mm8    &mm3    &mm4    &mm5    &mm6          &mm7
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans
             >;
