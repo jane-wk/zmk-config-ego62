@@ -14,11 +14,11 @@
 
         default_layer {
             bindings = <
-&kp GRAVE   &kp N1      &kp N2       &kp N3     &kp N4        &kp N5                               &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp MINUS
-&kp ESC     &kp Q       &kp W        &kp E      &kp R         &kp T                                &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
-&kp TAB     &kp A       &kp S        &kp D      &kp F         &kp G                                &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z       &kp X        &kp C      &kp V         &kp B                                &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
-&kp C_PREV  &kp C_NEXT  &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp TAB  &kp DELETE  &kp RIGHT_SHIFT  &kp LEFT_WIN  &lt 3 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
+&kp GRAVE   &kp N1      &kp N2       &kp N3     &kp N4        &kp N5                                 &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp MINUS
+&kp ESC     &kp Q       &kp W        &kp E      &kp R         &kp T                                  &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
+&kp TAB     &kp A       &kp S        &kp D      &kp F         &kp G                                  &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &kp SQT
+&kp LSHFT   &kp Z       &kp X        &kp C      &kp V         &kp B                                  &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
+&kp C_PREV  &kp C_NEXT  &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp TAB  &lt 4 DELETE  &kp RIGHT_SHIFT  &kp LEFT_WIN  &lt 3 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -26,11 +26,11 @@
 
         layer_1 {
             bindings = <
-&none              &none         &none         &none         &none         &none                       &none         &none         &none         &none         &none         &none
-&kp K_MUTE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
-&kp F1             &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                      &none         &kp EQUAL     &kp MINUS     &none         &none         &none
-&kp F7             &kp F8        &kp F9        &kp F10       &kp F11       &kp F12                     &none         &none         &none         &none         &none         &none
-&kp C_VOLUME_DOWN  &kp C_VOL_UP  &none         &none         &none         &none         &none  &none  &none         &none         &none         &none         &none         &none
+&none              &none         &none         &none         &none         &none                       &none         &none          &none          &none         &none         &none
+&kp C_MUTE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                &kp NUMBER_6  &kp NUMBER_7   &kp NUMBER_8   &kp NUMBER_9  &kp NUMBER_0  &none
+&kp F1             &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                      &none         &kp EQUAL      &kp MINUS      &none         &none         &none
+&kp F7             &kp F8        &kp F9        &kp F10       &kp F11       &kp F12                     &none         &kp LS(EQUAL)  &kp LS(MINUS)  &none         &none         &none
+&kp C_VOLUME_DOWN  &kp C_VOL_UP  &none         &none         &none         &none         &none  &none  &none         &none          &none          &none         &none         &none
             >;
         };
 
@@ -51,6 +51,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans    &trans    &trans     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans     &trans  &trans
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &kp C_SLEEP
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
