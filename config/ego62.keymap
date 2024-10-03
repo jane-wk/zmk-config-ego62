@@ -9,16 +9,32 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        mm1: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &kp LS(END) &kp K_COPY>;
+            label = "NEW_MACRO";
+        };
+
+        mm2: mm2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp ENTER &kp K_PASTE>;
+            label = "MM2";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp GRAVE   &kp N1      &kp N2       &kp N3     &kp N4        &kp N5                                 &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp MINUS
-&kp ESC     &kp Q       &kp W        &kp E      &kp R         &kp T                                  &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
-&kp TAB     &kp A       &kp S        &kp D      &kp F         &kp G                                  &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z       &kp X        &kp C      &kp V         &kp B                                  &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
-&kp C_PREV  &kp C_NEXT  &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp TAB  &kp LEFT_WIN  &kp RIGHT_SHIFT  &lt 4 DELETE  &lt 3 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
+&kp GRAVE  &kp N1  &kp N2       &kp N3     &kp N4        &kp N5                                 &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp MINUS
+&kp ESC    &kp Q   &kp W        &kp E      &kp R         &kp T                                  &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
+&kp TAB    &kp A   &kp S        &kp D      &kp F         &kp G                                  &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z   &kp X        &kp C      &kp V         &kp B                                  &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
+&mm1       &mm2    &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp TAB  &kp LEFT_WIN  &kp RIGHT_SHIFT  &lt 4 DELETE  &lt 3 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
