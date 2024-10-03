@@ -13,15 +13,50 @@
         mm1: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp HOME &kp LS(END) &kp K_COPY>;
+            bindings = <&kp HOME &kp LS(END) &kp LC(C)>;
             label = "NEW_MACRO";
         };
 
         mm2: mm2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp END &kp ENTER &kp K_PASTE>;
+            bindings = <&kp END &kp ENTER &kp LC(V)>;
             label = "MM2";
+        };
+
+        mm3: mm3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(NUMBER_9) &kp LS(NUMBER_0) &kp LEFT>;
+            label = "MM3";
+        };
+
+        mm4: mm4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LEFT_BRACKET) &kp LS(RIGHT_BRACKET) &kp LEFT_ARROW>;
+            label = "MM4";
+        };
+
+        mm5: mm5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "MM5";
+        };
+
+        mm6: mm6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SQT) &kp LS(SQT) &kp LEFT>;
+            label = "MM6";
+        };
+
+        mm7: mm7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
+            label = "MM7";
         };
     };
 
@@ -74,7 +109,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp NUMBER_1  &kp K_SLEEP
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &mm3    &mm4    &mm5    &mm6          &mm7
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans
             >;
