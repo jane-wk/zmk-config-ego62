@@ -65,6 +65,13 @@
             bindings = <&kp HOME &kp LS(END)>;
             label = "MM8";
         };
+
+        mm9: mm9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp ENTER>;
+            label = "MM9";
+        };
     };
 
     keymap {
@@ -72,11 +79,11 @@
 
         default_layer {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2       &kp N3     &kp N4        &kp N5                                 &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp MINUS
-&kp ESC    &kp Q   &kp W        &kp E      &kp R         &kp T                                  &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
-&kp TAB    &kp A   &kp S        &kp D      &kp F         &kp G                                  &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z   &kp X        &kp C      &kp V         &kp B                                  &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
-&mm1       &mm2    &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp TAB  &kp LEFT_WIN  &kp RIGHT_SHIFT  &lt 3 DELETE  &lt 4 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
+&kp GRAVE  &kp N1  &kp N2       &kp N3     &kp N4        &kp N5                                     &kp N6           &kp N7        &kp N8        &kp N9         &kp N0         &kp LA(F4)
+&kp ESC    &kp Q   &kp W        &kp E      &kp R         &kp T                                      &kp Y            &kp U         &kp I         &kp O          &kp P          &kp BACKSLASH
+&kp TAB    &kp A   &kp S        &kp D      &kp F         &kp G                                      &kp H            &kp J         &kp K         &kp L          &kp SEMICOLON  &mm9
+&kp LSHFT  &kp Z   &kp X        &kp C      &kp V         &kp B                                      &kp N            &kp M         &kp COMMA     &kp DOT        &kp FSLH       &kp RSHIFT
+&mm1       &mm2    &lt 1 SPACE  &kp LCTRL  &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LA(TAB)  &kp LEFT_WIN  &kp RIGHT_SHIFT  &lt 3 DELETE  &lt 4 RETURN  &kp BACKSPACE  &kp C_VOL_DN   &kp C_VOL_UP
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -104,21 +111,21 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans    &trans             &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LS(LC(LEFT))  &kp UP    &kp LS(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LEFT          &kp DOWN  &kp RIGHT          &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LS(LEFT)      &trans    &kp LS(RIGHT)      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans             &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans            &trans    &trans             &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LS(LC(LEFT))  &kp UP    &kp LS(LC(RIGHT))  &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LEFT          &kp DOWN  &kp RIGHT          &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp LS(LEFT)      &trans    &kp LS(RIGHT)      &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans             &kp C_PLAY  &kp K_MUTE
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp NUMBER_1  &kp K_SLEEP
-&trans  &trans  &trans  &trans  &trans  &trans                  &mm8    &mm3    &mm4    &mm5    &mm6          &mm7
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &none       &none
+&trans  &trans  &trans  &trans  &trans  &trans                  &mm8    &mm3    &mm4    &mm5    &mm6        &mm7
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp C_PREV  &kp C_NEXT
             >;
         };
     };
